@@ -55,7 +55,7 @@ struct AirQualitySensor : Service::AirQualitySensor {
       Serial.println("Excellent");
     } else if (pm25 <= 35) {
       homeKitQuality = 2; // Good
-      statusLED->setRGB(154, 205, 50); // YellowGreen
+      statusLED->setRGB(25, 225, 50); // YellowGreen
       Serial.println("Good");
     } else if (pm25 <= 55) {
       homeKitQuality = 3; // Fair

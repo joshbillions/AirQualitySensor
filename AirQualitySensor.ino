@@ -19,11 +19,8 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Booting");
 
-  // Wait for sensor to come up
-  delay(2000);
-
-  //esp_task_wdt_init(3, true);
-  //esp_task_wdt_add(NULL);
+  esp_task_wdt_init(3, true);
+  esp_task_wdt_add(NULL);
 
   FastLED.addLeds<CHIPSET, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
   FastLED.setBrightness( BRIGHTNESS );
