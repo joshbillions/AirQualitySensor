@@ -8,6 +8,7 @@ struct AirQualitySensor : Service::AirQualitySensor {
   SpanCharacteristic *airQuality;
   SpanCharacteristic *pm10Density;
   SpanCharacteristic *pm25Density;
+  int sensorFailureCount = 0;
 
   AirQualitySensor(CRGB &led) : Service::AirQualitySensor() {
     statusLED = &led;
@@ -37,6 +38,10 @@ struct AirQualitySensor : Service::AirQualitySensor {
     if (!sensor.read(&data)) {
       statusLED->setRGB(255, 255, 255);
       Serial.println("Failed to read sensor");
+      sensorFailureCount += 1;
+      if (sensorFailureCount > 10) {
+        while(1) delay(10);
+      }
       return;
     }
 
