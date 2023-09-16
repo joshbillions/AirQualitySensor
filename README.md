@@ -1,7 +1,6 @@
 # AirQualitySensor
 
 ![Sensor](http://joshbillions.users.sonic.net/github/air_quality_sensor.jpeg)
-![iOS Screenshot](http://joshbillions.users.sonic.net/github/air_quality_sensor_ios.png)
 
 ## What is this?
 This project takes PM1.0, PM2.5, and PM10.0 measurements from a PMSA003I particulate sensor and provides them to HomeKit for display on iOS and macOS devices without the need for an additional bridge.
@@ -14,3 +13,6 @@ This project takes PM1.0, PM2.5, and PM10.0 measurements from a PMSA003I particu
 ## Wiring
 - They weren't lying when they named it 'Qwiic' - just connect the ESP32 to the sensor breakout via the cable.
 
+## iOS
+
+![iOS Screenshot](http://joshbillions.users.sonic.net/github/air_quality_sensor_ios.png)
